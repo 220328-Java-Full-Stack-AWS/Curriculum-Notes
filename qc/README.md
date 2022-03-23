@@ -8,6 +8,7 @@ You can focus your study here, but these are not exhaustive lists of all possibl
  - [Java Basics](./java-basics.md)
  - [Java Intermediate - Advanced](./java-advanced.md)
  - [SQL](./qc-sql.md)
+ - [Hibernate](./qc-hibernate.md)
  - [Junit](./qc-junit.md)
  - [Spring](./qc-spring.md)
 
@@ -16,7 +17,7 @@ You can focus your study here, but these are not exhaustive lists of all possibl
  - [CSS](./qc-css.md)
  - [JavaScript](./qc-javascript.md)
  - [TypeScript](./qc-typescript.md)
- - [React & Redux](./qc-react-ak.md)
+ - [Angular](./qc-angular.md)
  - [AJAX](./qc-ajax.md)
 
 ### Web Services:
@@ -33,8 +34,7 @@ You can focus your study here, but these are not exhaustive lists of all possibl
 
 ### Stuff Not In Our Curriculum That You May Find Interesting:
  - [MSA](./qc-msa.md)
- - [Hibernate](./qc-hibernate.md)
- - [Angular](./qc-angular.md)
+ - [React & Redux](./qc-react-ak.md)
 
 
 ### Keep the following in mind for QCs:
