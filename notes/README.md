@@ -1,6 +1,6 @@
 # Notes
 ### Newest Topics:
- - DS&A
+Git, Linux, OOP, Intro to Java
 
 
 ## Java
