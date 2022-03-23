@@ -1,0 +1,6 @@
+.target/
+.idea/
+*.class
+*.iml
+*.properties
+node_modules/
