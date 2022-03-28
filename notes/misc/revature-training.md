@@ -26,7 +26,7 @@ QCs are a series of informal assessments conducted by trainers and the QC depart
 From time to time I will assign labs for your practice. Labs are **not required**, but are probably the best way to learn the topics in our curriculum. I encourage you explore the labs as much as possible. They will be designed to elucidate concepts and prepare you for projects and assignments. I encourage you to collaborate on labs with your fellow associates. If you like to code (which I hope everyone here does) I would hope you find these educational and fun.
 
 # Assignments
-~~Assignments, unlike labs, **are required**. I expect these to be turned in (pushed) to the correct repository in our github orginization on time by everyone. I expect everyone's work **to be their own**. These will be graded, but the grades are for you and I to benchmark your skill and progress.
+Assignments, unlike labs, **are required**. I expect these to be turned in (pushed) to the correct repository in our github orginization on time by everyone. I expect everyone's work **to be their own**. These will be graded, but the grades are for you and I to benchmark your skill and progress.
 
 # Projects
 There will be a total of 4 projects you will all work on. We will start with Project 0, or P0, in week 1. P1, P2, and P3 will all be group projects. I will provide a document with very explicit requirements for P0-P2, and the CoE team will provide detailed requirements for the capstone project, P3.
