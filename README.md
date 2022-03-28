@@ -8,7 +8,6 @@ Welcome to Revature! Over the course of this curriculum we will prepare you to b
  - [Environment](./environment.md)
  - [Revature Training & Curriculum](./notes/misc/revature-training.md)
  - [Labs](./labs/README.md)
- - [Assignments](https://github.com/220110-Java-React-Enterprise/Assignments)
  - [Code Demos](./demos/README.md)
  - [Self Study Topics](./self-study.md)
 
