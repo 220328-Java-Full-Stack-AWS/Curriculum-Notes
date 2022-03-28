@@ -25,13 +25,8 @@ QCs are a series of informal assessments conducted by trainers and the QC depart
 # Labs
 From time to time I will assign labs for your practice. Labs are **not required**, but are probably the best way to learn the topics in our curriculum. I encourage you explore the labs as much as possible. They will be designed to elucidate concepts and prepare you for projects and assignments. I encourage you to collaborate on labs with your fellow associates. If you like to code (which I hope everyone here does) I would hope you find these educational and fun.
 
-# Assignments
-Assignments, unlike labs, **are required**. I expect these to be turned in (pushed) to the correct repository in our github orginization on time by everyone. I expect everyone's work **to be their own**. These will be graded, but the grades are for you and I to benchmark your skill and progress.
-
 # Projects
-There will be a total of 4 projects you will all work on. We will start with Project 0, or P0, in week 1. P1, P2, and P3 will all be group projects. I will provide a document with very explicit requirements for P0-P2, and the CoE team will provide detailed requirements for the capstone project, P3.
-  
-Each project will be acompanied by a showcase, where everyone shows off their work. P3 will be a big presentation involving everyone, and there may be hundreds of attendees from Revature and beyond to see your work.
+There will be a total of 3 projects you will all work on. We will start with Project 1, or P1, in week 1. P2, and P3 will be group projects. We will provide a explicit requirements for P1-P3. P1 is solo, P2 is groups of about 5, and P3 is one big group. Each project will be acompanied by a showcase, where everyone shows off their work. P3 will be a big presentation involving everyone, and there may be hundreds of attendees from Revature and beyond to see your work.
 
 # Panels
 Some time after week 8 you will be required to take "panels". Named for the style of the exam, a panel of experts would ask you technical and interview questions to test your knowlege and readiness for real interviews. Recently the panels have taken a new form, an online assessment. This represents the final exam, you'll learn more as the time approaches. 
