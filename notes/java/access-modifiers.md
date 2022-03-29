@@ -10,7 +10,7 @@ Access modifiers are keywords which define the ability of other code to access t
 | --- | --- |
 | `public` | Available anywhere |
 | `protected` | Within the same package, and this class' sub-classes |
-| `default` | Within the same package |
+| default | Within the same package |
 | `private` | Only within the same class |
 <br>
 
