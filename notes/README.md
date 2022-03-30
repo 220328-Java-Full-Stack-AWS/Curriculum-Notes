@@ -67,6 +67,25 @@ Git, Linux, OOP, Intro to Java
  - [Decorators](./typescript/ts-decorators.md)
  - [Interfaces](./typescript/ts-interfaces.md)
 
+## Angular 4
+ - [History of Angular](./angular/history.md)
+ - [Single Page Application](./angular/angular-spa.md)
+ - [WebPack](./angular/webpack.md)
+ - [Angular CLI](./angular/angular-cli.md)
+ - [Node & NPM](./angular/node-npm.md)
+ - [Components](./angular/components.md)
+ - [Modules](./angular/modules.md)
+ - [Directives](./angular/directives.md)
+ - [Data Binding](./angular/data-binding.md)
+ - [Routing](./angular/routing.md)
+ - [Services](./angular/services.md)
+ - [Events](./angular/event-emitters.md)
+ - [HttpClient](./angular/http-client.md)
+ - [Pub/Sub Pattern](./angular/pub-sub.md)
+ - [RxJS](./angular/rxjs.md)
+ - [Pipes](./angular/pipes.md)
+ - [Testing](./angular/testing.md)
+ - [Review](./angular/review.md)
 
 ## React & Redux
  - [Intro to React](./react/intro-react.md)
@@ -162,6 +181,15 @@ Git, Linux, OOP, Intro to Java
  - [Data Structures & Algorithms](./misc/data-structures-algorithms.md)
  - [Important Data Structures](./misc/data-structures.md)
 
+## SOA & Microservices
+ - [Intro to MSA](./microservices/intro-MSA.md)
+ - [Richardson Maturity Model](./web%20services/rest-rmm.md)
+ - [Content Negotiation](./web%20services/content-negotiation.md)
+ - [REST Best Practices](./web%20services/best-practices.md)
+ - [MSA Characteristics](./microservices/msa-charasteristics.md)
+ - [Eureka - Discovery Service](./microservices/msa-discovery.md)
+ - [Consul - Discovery Service](./microservices/msa-consul.md)
+ - [Config Server](./microservices/msa-config.md)
 
 ## Design Patterns
  - [Design Patterns](./misc/design-patterns.md)
