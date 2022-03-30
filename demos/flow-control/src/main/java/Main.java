@@ -25,6 +25,7 @@ public class Main {
             switch
                 case
                 default
+                break
 
         These aren't normally what we think of when we say "control flow" but see our definition above.
         Breaks:
@@ -88,16 +89,116 @@ public class Main {
         }
 
 
+        /*
+        Branching
+         */
+        if(myList.size() >= 3 && myList.size() <= 10 && myList.size() != 5) {
+            System.out.println("do this");
+        }
+
+        /*
+        true && true == true
+        true && false == false
+        false && true == false
+        false && false == false
+
+        true || true == true
+        true || false = true
+        false || true == true
+        false || false == false
+         */
+
+        if(myList.size() > 2) {
+            System.out.println("do the thing");
+        } else {
+            System.out.println("do a different thing");
+        }
+
+
+        int x = 4;
+        if(x == 1) {
+            System.out.println("x equals 1");
+        } else if(x == 2) {
+            System.out.println("x equals 2");
+        } else if(x == 3) {
+            System.out.println("x equals 3");
+        } else if(x == 4) {
+            System.out.println("x equals 4");
+        } else if(x == 5) {
+            System.out.println("x equals 5");
+        } else {
+            System.out.println("x is a big old number!");
+        }
+
+
+        switch(x) {
+            case 1:
+                System.out.println("x equals 1");
+                break;
+            case 2:
+                System.out.println("x equals 2");
+                break;
+            case 3:
+                System.out.println("x equals 3");
+                break;
+            case 4:
+                System.out.println("x equals 4");
+                break;
+            case 5:
+                System.out.println("x equals 5");
+                break;
+            default:
+                System.out.println("x is a big old number!");
+                break;
+        }
+
+        /*
+        If we fail to add breaks to the cases, then we get "fall through" where nothing stops
+        the execution from moving on to the next case. The other cases aren't checked, execution simply goes on
+        to those lines like normal. So we need to break out of each case. Sometimes we may want to have fall through,
+        like in the example below.
+         */
+        String userInput = "q";
+        switch(userInput) {
+            case "Q":
+            case "q":
+                System.out.println("you entered q");
+                break;
+            case "M":
+            case "m":
+                System.out.println("you entered m");
+                break;
+        }
 
 
 
 
+        /*
+        When it comes to loops, we have two mroe tools we can use: break and continue.
+         */
 
+        //x is 4, we set it above
+        while(true) {
+            x++;
+            System.out.println(x);
+            if(x > 7) {
+                break;
+            }
+        }
 
+        //good use case for break: searching a list
+        for (String temp : myList) {
+            System.out.println(temp);
+            if(temp.equals("Kyle")) {
+                break; //we found the one we are looking for, no need to continue through the rest of the list.
+            }
+        }
 
-
-
-
-
+        for (int k = 0; k < 10; k++) {
+            if(k % 2 != 0) {
+                continue;
+            }
+            System.out.println(k + " is even");
+        }
     }
 }
