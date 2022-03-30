@@ -1,8 +1,72 @@
-import animals.Animal;
-import people.Person;
-
 public class Main {
     public static void main(String[] args) {
+        byte by = 127;
+        Byte myByte = 127;
+        short s = 32767;
+        Short myShort = 32767;
+        int i = 0; //integer primitive
+        Integer myInteger;
+        long l = 1;
+        Long myLong;
+        char c = 'c';
+        Character myCharacter;
+        float f = 0.5f;
+        Float myFloat;
+        double d = 0.5;
+        Double myDouble;
+        boolean b = true;
+        Boolean myBoolean;
+
+        int jj = 5;
+        float ff = jj;
+        int ii = (int) ff;
+        float fff = (float) 1;
+
+
+        Integer boxed;
+        boxed = 7; //7 is an int, but we just put it in the Integer wrapper class with no fuss. No need for constructors or the new keyword
+        int unboxed = boxed;
+        unboxed++;
+        boxed = unboxed;
+        boxed++;
+
+        //this is not autoboxing, it's just another similar shortcut so we don't have to use the new keyword.
+        String str = "hello";
+        String str2 = "hello";
+        String str3 = new String("hello");
+
+        if (str == str3) {
+            System.out.println("Strings are equal.");
+        } else {
+            System.out.println("Strings are NOT equal.");
+        }
+
+        str3 = str3.intern();
+
+
+        System.out.println("After interning...");
+        if (str == str3) {
+            System.out.println("Strings are equal.");
+        } else {
+            System.out.println("Strings are NOT equal.");
+        }
+
+        //str == str2 is true //equality checking on reference value
+        //str == str3 is false //equality checking on reference value
+        //str.equals(str3) is true //this is a deep equality check. This is the good way to test equality.
+
+        /*
+        The syntax String str = "string"; puts the string in the string pool
+        The syntax String str = new String("String"); does not.
+        If we wanted to move a string into the string pool, we call it's intern method.
+         */
+
+
+        String immutableString = "this string cannot be changed.";
+        immutableString = immutableString + " let's add more to the string.";
+
+
+/*
         //print the command line arguments
         Args.printArgs(args);
 
@@ -44,6 +108,6 @@ public class Main {
         System.out.println(staticTest2.getStr()); //set obj2 local member to "two"
         System.out.println(staticTest2.getObjectStaticString()); //set obj2 static member "two" - this overwrites the "one" from earlier
 
-
+*/
     }
 }
