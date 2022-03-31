@@ -1,1 +1,4 @@
 This is a text document to be tracked by Git.
+
+
+This is text entered and committed through the github web UI
