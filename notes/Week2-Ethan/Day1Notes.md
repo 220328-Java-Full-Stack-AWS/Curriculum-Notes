@@ -146,3 +146,12 @@ There are a couple different ways to create a branch with git
 We can view all of our local branches using `git branch`
 
 We can view all of our remote branches using `git branch -r`
+
+When a new branch is created, it will contain the current version of main (or what ever branch you branched off of)
+
+You can then create, and make changes to files in this new branch, and follow the same git flow
+
+When you are ready to combine changes from the feature branch to your main branch, you want to use `git merge <branchname>`
+
+Keep in mind, you want to run this command from the branch you want to merge INTO
+
