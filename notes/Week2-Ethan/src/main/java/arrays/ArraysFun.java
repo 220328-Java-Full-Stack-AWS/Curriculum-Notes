@@ -39,6 +39,8 @@ public class ArraysFun {
     public void twoDLoop(){
         int number = 1;
 
+        //int twoDArray[i][j] = {{1,2,3},{4,5,6},{7,8,9}}
+
         for(int i=0; i<twoDArray.length; i++) {
             for (int j = 0; j < twoDArray[i].length; j++) {
                 twoDArray[i][j] = number;
@@ -48,8 +50,12 @@ public class ArraysFun {
             }
             System.out.println();
         }
+    }
 
-
+    public void twoDCheck(){
+        for(int i=0; i<twoDArray.length; i++){
+            System.out.println(twoDArray[i]);
+        }
     }
 
     //Var args

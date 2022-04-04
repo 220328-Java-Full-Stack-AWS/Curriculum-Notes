@@ -279,3 +279,64 @@ Is what we considered an enhanced for loop.
 It allows us to simply loop through all of the content of an array, or other data structure
 
 We do not need to include any of the looping variables like a normal for loop
+
+# Java Modifiers
+
+Modifiers are keywords that modify the functionality of our java classes, methods, or class members
+- Two types of modifiers are access and non-access
+
+## Access Modifiers are keywords that define the ability of other classes to access the give entity
+
+We have four available access modifiers in Java
+- public : available anywhere
+- protected : available within the same package and subclasses
+- default (has no keyword): available within the same package only
+- private : available only within the class
+
+## Non-access modifiers modify the functionality of our java code, but the not availability
+- There are technically 7 non-access modifers, but we will typically only use 4
+
+`static` denote a class member has class/static scope
+- if a variable or method is denoted with static scope that means that it belongs to the class
+- The method can only access other static class members
+- The variable will be the same across all of the object instances of this class
+- We can also access static variables and methods directly through the class
+    - `MyClass.staticVariable` or `MyClass.staticMethod()` 
+
+`final` denotes whatever it is applied to is unchangeble
+- when applied to a variable, you cannot reassign it once set
+    - `public final String name = "Ethan";` this is a nono => `name = "Bob"`
+- when applied to a class, you cannot extend that class
+- when applied to a method, you cannot override that method
+
+`abstract` keyword means two things depending on what is is applied to
+- when it is applied to a class, the class can no longer be directly instantiated, you must now inherit it
+- when applied to a method, the method must not have an implementation, it must be overriden in a child class
+    - You are only allowed to create abstract methods in Abstract classes and interfaces
+
+`transient` marks a variable as non-serializable
+- If you were to write the object to a file, that field marked as transient would be ignored
+
+# Variables Scopes
+
+In the java programming language we have 4 different variable scopes
+
+Each scope defines where the variable is accessible, and how long it is avaiable
+
+The four scopes include:
+
+Instance Scope: belong to the object itself
+- Each individual object instantiated from the class will have its own value for that variable
+
+Static Scope/Class Scope: the variable belongs to the class itself
+- The variable will store the same value across all objects of that class
+- If you change the value in one instance, it will change in all instances of that class
+
+Method Scope: these are variables that are created inside of method blocks
+- Once the method is done executing, the variable no longer exists
+- You can't access the variable outside of the method block
+
+Block Scope: these are variable that are created inside of specific blocks of code
+- Typically going to be loops, if statements, switch...
+- Once again, after the loop, or if statement, or whatever is finished running, the variable is no longer available
+- You can't access the variable outside of the block of code
