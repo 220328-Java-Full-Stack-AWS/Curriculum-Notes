@@ -340,3 +340,16 @@ Block Scope: these are variable that are created inside of specific blocks of co
 - Typically going to be loops, if statements, switch...
 - Once again, after the loop, or if statement, or whatever is finished running, the variable is no longer available
 - You can't access the variable outside of the block of code
+
+# Reading from the Console
+
+So far we have just hard coded some data into our programs and ran them to see the output
+
+What if we wanted to get data from our users in some other way?
+- The simplest way is through the console
+
+We can do this with the built in scanner class in Java
+
+Most typically we will use System.in as the source for the scanner, this allows us to take input from the console
+
+The Scanner class has methods to get entire lines of text, numbers, letters and more from the console
