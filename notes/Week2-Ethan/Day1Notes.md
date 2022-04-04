@@ -212,3 +212,6 @@ The pull request essentially tells your leader/project manager that you code is 
 
 Typically after you create a pull request, someone will review your code, this is to ensure quality, then the code will be merged into the requested branch
 
+To create a pull request go to the repository on Github > Choose the `Pull Request` tab > Click on the green `New pull request` button
+
+Clicking on the green button will walk you through making a pull request
