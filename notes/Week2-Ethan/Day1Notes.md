@@ -230,3 +230,52 @@ Inside of the `add rule` section of `Branches` you can setup rules for different
 - If the branch requires signed commits
 - Enforce restrictions on admins
 - You should be able to restrict who pushes to the specified branch
+
+# Arrays, VarArgs, and for-each loops
+
+An object which stores elements of the same data type
+- The elements are stored via index, with an array, each index is located next to one another in the physical memory of our application
+- Array indexes start at 0, you access specific elements in the array by these indexes
+- The array must be given a size when instantiated, and it CANNOT be resized
+- The `length` property gives programmes access to the size of the array
+
+There are multiple ways to declare an array:
+- `datatype[] arr;`
+- `datatype arr[];`
+
+There are multiple ways to instantiate an array:
+- `datatype[] arr = new datatype[size];`
+- `datatype arr[] = {obj1, obj2, obj3};`
+
+Arrays are considered objects, meaning we can store arrays inside of arrays, making multidimensional arrays
+- These can be used to model matrixes, and be used to solve complex dynamix programming
+
+To create multi-dimensional arrays we just add more brackets
+- `datatype[][] arr`
+
+The first set of indexes in our multi-dimension arrays are storing arrays
+- These are similar to rows and columns
+- `datatype[row][col] arr`;
+
+## Var Args
+
+Var args is a notation to pass an unset amount of parameters of a single data type
+
+- Uses the ... notation
+- There can only be one var arg in a method, and it must be the last parameter
+- Var args get converted to arrays behind the scenes, so you can treat them just like arrays
+- ``` java
+    method(String pa1, Object pa2, int numbers ...){
+        //get the 2nd value passed into varags
+        int second = numbers[1];
+    }
+    method("Hellow", new Object(), 1,2,3,4,5,6);
+    ```
+
+## for-each (enhanced for loop)
+
+Is what we considered an enhanced for loop.
+
+It allows us to simply loop through all of the content of an array, or other data structure
+
+We do not need to include any of the looping variables like a normal for loop
