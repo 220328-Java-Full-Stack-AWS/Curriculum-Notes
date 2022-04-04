@@ -168,3 +168,47 @@ After you have fixed up the conflict, you can commit the changes and the merge s
 
 
 This text is different, we are trying to cause a conflict
+
+# Gitflow and Branching Strategies
+
+Git flow is a command line tool that can be used with git for applications that need a more complext work flow
+
+Git flow is a git workflow designed by Vincent Driessen and NVIE.
+
+It is a robust framework for managaing larger projects by defining a strict branching model designed around project release
+
+If you wanted to use the command line tool, you can simply run git flow init in your gitbash on widows
+
+Or on MacOS install gitflow with homebrew and run it
+
+The Command line tool will walk you through setting up each of the branches to be used in the workflow
+
+These will include
+- Main
+- Development Branch / Next Release
+- Feature Branches
+- Hotfix branch
+
+The git flow sets up thes strict branches to follow the work flow
+
+Main branch
+- Hold the current production build of your application
+
+Development Branch
+- Hold the code that is ready to be merged into the main branch
+
+Feature Branches
+- Individual features, one feature per branch
+- As you finish up a feature, and it is working, you merge it into the development branch
+
+Hotfix Branch
+- If we need some very quick fix, we will branch off of main, fix the problem, then merge back into main
+
+![branches](branches.PNG)
+
+It is best practice to not automatically merge your code into a new branch, rather you should create a pull request.
+
+The pull request essentially tells your leader/project manager that you code is ready for review and to be merged
+
+Typically after you create a pull request, someone will review your code, this is to ensure quality, then the code will be merged into the requested branch
+
