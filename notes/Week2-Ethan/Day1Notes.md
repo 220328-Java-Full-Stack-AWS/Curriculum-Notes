@@ -155,3 +155,14 @@ When you are ready to combine changes from the feature branch to your main branc
 
 Keep in mind, you want to run this command from the branch you want to merge INTO
 
+## Merge Conflicts
+
+Merge conflicts occur when the same code is modified on multiple branches. Because the code was changed on multiple branches, git does not know which code to commit on the branch you are attempting to merge into
+
+You will be unable to complete the merge until the conflich is resolved and commited
+
+To resolve the merge conflict you will need to open the conflicting file in a text editor, and choose which version you would like to commit to the repository
+- Sometimes you can see the conflict text in your IDE, but sometimes it doesn't show up. So the easiest way to fix conflicts are text editors on the command line
+
+After you have fixed up the conflict, you can commit the changes and the merge should go through
+
