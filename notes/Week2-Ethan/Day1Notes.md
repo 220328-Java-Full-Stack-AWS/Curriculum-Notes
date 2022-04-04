@@ -166,3 +166,4 @@ To resolve the merge conflict you will need to open the conflicting file in a te
 
 After you have fixed up the conflict, you can commit the changes and the merge should go through
 
+We are attempting to cause a merge conflict, lets see if we can
