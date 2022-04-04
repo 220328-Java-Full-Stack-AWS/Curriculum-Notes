@@ -143,3 +143,6 @@ There are a couple different ways to create a branch with git
     - Create the branch and check it out/switch to it in one go
     - `git checkout -b <branchname>`
 
+We can view all of our local branches using `git branch`
+
+We can view all of our remote branches using `git branch -r`
