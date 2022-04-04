@@ -215,3 +215,18 @@ Typically after you create a pull request, someone will review your code, this i
 To create a pull request go to the repository on Github > Choose the `Pull Request` tab > Click on the green `New pull request` button
 
 Clicking on the green button will walk you through making a pull request
+
+# Protecting Branches on Github
+
+On Github you can go into settings of your repository
+
+Inside of settings you can choose the `Branches` tab and here you can see setting for your default branch and setup rules for other branches
+- Something to note, you will only see the rules section if your repository is public, otherwise you will have to pay for a more advanced version of Github
+
+Inside of the `add rule` section of `Branches` you can setup rules for different things such as:
+- If a pull request is required before merging into a branch
+- If the commit requires a status check
+- If the commit needs a converstation resolution before merging
+- If the branch requires signed commits
+- Enforce restrictions on admins
+- You should be able to restrict who pushes to the specified branch
