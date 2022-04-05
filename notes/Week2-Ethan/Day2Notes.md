@@ -146,3 +146,19 @@ To create a custom exception you can do it one of two ways:
 - Extend the RunTimeException class to create an unchecked exception
 
 Fill out the constructor to be given a custome exception message
+
+# Try with resources
+
+Java 7 included this new try block which automatically closes any resources declared inside of it
+
+We have not talked about any of these resources yet, but they could include JDBC connections, INputStreams, or FileReaders
+
+This can help us prevent memory leaks
+
+```java
+try(InputStream is = new FileInputStream("somefile.txt")){
+    //do some logic
+} catch(Exception e){}
+```
+
+The only caveat is that whatever resource you are trying to open in the try block must implement the `AutoCloseable` interface

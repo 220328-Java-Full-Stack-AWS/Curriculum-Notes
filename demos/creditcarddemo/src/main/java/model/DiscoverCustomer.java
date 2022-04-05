@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.OverCreditException;
+
 import java.util.Date;
 
 public class DiscoverCustomer extends Customer implements Discover{
@@ -13,7 +15,12 @@ public class DiscoverCustomer extends Customer implements Discover{
     }
 
     @Override
-    public void purchase(String kind, double amount) {
+    public void purchase(String kind, double amount) throws OverCreditException{
+        if(balance + amount > creditLimit){
+            //If we wanted to have some custom exception message, we could include it in the constructor when
+            //throwing a new exception
+            throw new OverCreditException();
+        }
         balance += amount;
     }
 
@@ -37,5 +44,9 @@ public class DiscoverCustomer extends Customer implements Discover{
     public int milesEarned(double amountSpent) {
         miles += miles + Math.floor(amountSpent);
         return miles;
+    }
+
+    public double getBalance(){
+        return balance;
     }
 }

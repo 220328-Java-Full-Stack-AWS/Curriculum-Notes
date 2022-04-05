@@ -1,3 +1,4 @@
+import exceptions.OverCreditException;
 import model.*;
 
 import java.util.Date;
@@ -30,6 +31,27 @@ public class CreditCardDriver {
         cc.payBalance(1000.0);
 
         System.out.println(cc.getBalance());
+
+        //If we attempt to call dc.purchase, there should be an issue because we have to handle the exception
+        //We must either surround this exception in a try catch, or duck it further
+        try{
+            dc.purchase("Food", 700.00);
+            System.out.println(dc.getBalance());
+            dc.purchase("Travel", 500.00);
+            System.out.println(dc.getBalance());
+        } catch (OverCreditException e){
+            e.printStackTrace();
+        } finally {
+            dc.payBalance(700.00);
+            System.out.println(dc.getBalance());
+        }
+
+        //To prove we don't have to handle the RuntimeException we created, we will "accidentally" make one occur
+        cadc.purchase("FOOD", 400);
+        System.out.println(cadc.getBalance());
+        cadc.payBalance(400);
+        System.out.println(cadc.getBalance());
+
 
     }
 

@@ -63,4 +63,8 @@ public class ChaseAndDiscoverCustomer extends Customer implements Chase, Discove
     public void calculateInterest() {
         balance += balance * 3;
     }
+
+    public double getBalance(){
+        return balance;
+    }
 }

@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.InvalidBalancePaymentException;
+
 import javax.swing.table.TableRowSorter;
 import java.util.Date;
 
@@ -29,10 +31,14 @@ public abstract class Customer {
     }
 
     public void payBalance(double amount){
-        balance = balance - amount;
+        if(amount <0 || amount >balance){
+            throw new InvalidBalancePaymentException();
+        } else{
+            balance = balance - amount;
+        }
     }
 
-    public abstract void purchase(String kind, double amount);
+    public abstract void purchase(String kind, double amount) throws Exception;
 
     public abstract void calculateInterest();
 }
