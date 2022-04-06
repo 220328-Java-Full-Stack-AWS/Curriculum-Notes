@@ -1,0 +1,47 @@
+-Tree
+	-A Tree is a non-linear data structure where data objects are organized in terms of hierarchical relationship 
+	-General Trees are often used to represent hierarchical data. For example, a hierarchical company structure would use a tree to organize. The hierarchical structure gives a tree unique properties for storing, manipulating, and accessing data. Trees form some of the most basic organization of computers.
+-Tree Types
+	-General tree: A tree with one root, and a parent can have as many children as it wants
+	-Binary tree: A tree with one root, and each parent can have only two children
+	-Complete binary tree: Left side of tree is completely filled (all nodes on left have two children)
+	-Full binary tree: Every node has two children
+	-Perfect binary: Full tree even on both sides
+	-Red-Black trees: Trees that are optimized for searching as they are sel-balancing
+
+-General tree rules:
+	-Each tree has a root node that sets up top
+	-All nodes besides the root node are child nodes. That is any node that has a parent
+	-Parent nodes have nodes below/that are child nodes
+	-Siblings have the same parent node
+	-Leaf nodes have no child nodes 
+	-Ancestor nodes are any node connected, going back towards the root node
+	-Tree's have a height and that is dependent upon how many nodes deep the tree goes
+						-					|-
+					-		-				|
+				-	-		-	-			|  Tree height
+			-	-	-		-	-	-		|_
+-Tree Traversals:
+	-There are 3 types:
+		-Inorder which means its read (Left, Root, Right)  2, 1, 3
+		-PreOrder (Root, Left, Right) 1, 2, 3
+		-PostOrder(Left, Right, Root) 2, 3, 1
+		
+-General tree properties:
+	-It is a recursive data structure, meaning it has a root node
+	-Depth of node x: meaning how far it is from root node to node x
+	-Height of node x: Longest path from node x to the leaf node
+	-Binary tree properties:
+		-The maximum number of nodes at a level is 2
+		-The maximum number of nodes in a binary tree of height h is +2^h-1 example 
+					1	-						|- 
+				2	-		- 3					|  (2^4)-1 = 15
+		4, 5	-	-		-	-	6, 7		|  Tree height 4 
+8,9,10,11-	-	-	-		-	-	- -12,13,14,15
+			
+-Advantages
+	-Searching. Storing information that we want to search quickly. Trees are easier to search than a Linked List. Some types of trees (like AVL and Red-Black trees) are designed for fast searching.
+-Different trees have different advantages, a binary tree for example is much faster at searching then a general tree
+
+-Disadvantages:
+	-Deleting nodes is a complex procedure as it has to traverse through several branches. Insertion, deletion, and search operations are dependent on the height of the tree.
