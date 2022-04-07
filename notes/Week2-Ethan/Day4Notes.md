@@ -144,5 +144,5 @@ an interface that allows you to define total ordering on some collection of obje
 
 # collections vs Collection vs Collections
 - collections are just a collection of entities
-- Collection: is the interface within the Collection API
+- Collection: is the interface within the Collections API
 - Collections: is a utility class that has static, convient methods that operate on data structures in the Collections API
