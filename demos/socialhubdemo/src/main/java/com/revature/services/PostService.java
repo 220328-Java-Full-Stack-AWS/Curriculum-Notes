@@ -5,6 +5,7 @@ import com.revature.models.Post;
 import com.revature.models.PostComparator;
 import com.revature.models.User;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
@@ -30,8 +31,21 @@ public class PostService {
             userFeed.addAll(pd.getPostsByUser(ui.next().getUsername()));
         }
 
-        return userFeed;
+        if(pd.getPostsByUser(u.getUsername()) == null) {
+            return userFeed;
+        }
+        else {
+            userFeed.addAll(pd.getPostsByUser(u.getUsername()));
+            return userFeed;
+        }
 
+    }
+
+    public void createPost(User u, String content){
+        Post p = new Post(content, u, new Date());
+
+        //We need to store this in the database
+        pd.createPost(p);
     }
 
 }

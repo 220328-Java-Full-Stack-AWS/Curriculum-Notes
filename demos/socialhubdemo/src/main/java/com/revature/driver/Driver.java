@@ -125,6 +125,14 @@ public class Driver {
                         System.out.println(loggedIn);
                         break;
                     case 3:
+                        System.out.println("Please enter the text of your post");
+                        String content = scan.nextLine();
+
+                        pServ.createPost(loggedIn, content);
+
+                        //Just to check and make sure that the users post got put in the database
+                        System.out.println(pDao.getPostsByUser(loggedIn.getUsername()));
+
                         break;
                     default:
                         System.out.println("I didn't quite catch that. Please reenter your choice");

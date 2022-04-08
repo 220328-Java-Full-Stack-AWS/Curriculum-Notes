@@ -8,4 +8,6 @@ public interface PostDao {
 
     List<Post> getPostsByUser(String username);
 
+    void createPost(Post p);
+
 }
