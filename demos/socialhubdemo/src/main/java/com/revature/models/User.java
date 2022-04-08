@@ -1,8 +1,5 @@
 package com.revature.models;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class User implements Comparable<User>{
 
@@ -132,6 +129,19 @@ public class User implements Comparable<User>{
                 ", followers=" + followers.size() +
                 ", following=" + following.size() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(email, user.email) && Objects.equals(first, user.first) && Objects.equals(last, user.last) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(posts, user.posts) && Objects.equals(followers, user.followers) && Objects.equals(following, user.following);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, first, last, username, password);
     }
 
     @Override

@@ -1,19 +1,22 @@
 package com.revature.driver;
 
-import com.revature.dao.UserDao;
-import com.revature.dao.UserDaoMockImp;
+import com.revature.dao.*;
 import com.revature.models.*;
 
 import java.util.*;
 
 import com.revature.models.Post;
 import com.revature.models.PostComparator;
+import com.revature.services.PostService;
 import com.revature.services.UserService;
 
 public class Driver {
 
     private static UserDao uDao = new UserDaoMockImp(); //After you connect to your database, you can swap UserDaoMockImp with your actual db logic
     private static UserService uServ = new UserService(uDao);
+    private static PostDao pDao = new PostDaoMockImpl();
+    private static PostService pServ = new PostService(pDao);
+
 
     public static void main(String[] args){
         /*
@@ -39,6 +42,9 @@ public class Driver {
         System.out.println(uServ.topRankedUsers());
 
          */
+
+        MockUserDB.getInstance().populateUsers();
+        MockPostDB.getInstance().populatePosts();
 
         User loggedIn = null;
         boolean done = false;
@@ -87,12 +93,49 @@ public class Driver {
             else{
                 //Do our other logic
                 System.out.println("Welcome to the lamest social media app!");
-                System.out.println("We could have implemented more logic, but too many people are snoozing, and we" +
-                        "need to wrap up for the day");
-                done = true;
+                System.out.println("What would you like to do today?");
+                System.out.println("Choose 1 to view feed, Choose 2 to follow users, Choose 3 to create a post");
+                int choice = scan.nextInt();
+                scan.nextLine();
+                switch(choice){
+                    case 1:
+                        Set<Post> feed = pServ.getUserFeed(loggedIn);
+                        Iterator<Post> pIt = feed.iterator();
+                        while(pIt.hasNext()){
+                            Post p = pIt.next();
+                            System.out.println(p.getUser().getUsername() + "\t\t\t\t" + p.getTimestamp().toString());
+                            System.out.println(p.getContent());
+                            System.out.println();
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Here are our top users you may want to follow");
+                        List<User> topUsers = uServ.topRankedUsers();
+                        //We can use an iterator to loop through our users
+                        System.out.println("Username\t\t\t\tFollowers");
+                        Iterator<User> userIterator = topUsers.iterator();
+                        //This is how we can loop through the entire list of users with an iterator
+                        while(userIterator.hasNext()){
+                            User u = userIterator.next();
+                            System.out.println(u.getUsername() +"\t\t\t\t" + u.getFollowers().size());
+                        }
+                        System.out.println("Please input a user you would like to follow");
+                        String username = scan.nextLine();
+                        uServ.followUser(loggedIn, username);
+                        System.out.println(loggedIn);
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("I didn't quite catch that. Please reenter your choice");
+                }
+
+                System.out.println("Are you tired of using this garbage app?");
+                System.out.println("Type y or n");
+                if(scan.nextLine().equals("y")){
+                    done = true;
+                }
             }
-
-
         }
 
         /*
@@ -120,6 +163,8 @@ public class Driver {
 
         System.out.println(postFeed);
          */
+        System.out.println("Goodbye");
     }
+
 
 }

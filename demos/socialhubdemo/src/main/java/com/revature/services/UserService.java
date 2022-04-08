@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.dao.UserDao;
+import com.revature.exceptions.UsernameOrPasswordIncorrectException;
 import com.revature.models.User;
 
 import java.util.Collections;
@@ -21,8 +22,9 @@ public class UserService {
         //Search the db for a user with the specified username, then check to see if the password matches
         if(ud.getUserByUserName(username) != null && ud.getUserByUserName(username).getPassword().equals(password)){
             return ud.getUserByUserName(username);
+        } else {
+            throw new UsernameOrPasswordIncorrectException();
         }
-        return null;
     }
 
     public User register(String first, String last, String email, String password){
