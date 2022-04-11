@@ -12,7 +12,7 @@ Welcome to Revature! Over the course of this curriculum we will prepare you to b
  - [Self Study Topics](./self-study.md)
 
 ## Project Specs:
- - [Project 1]() - Solo, basic full stack application
+ - [Project 1](https://github.com/220328-Java-Full-Stack-AWS/P1-Spec) - Solo, basic full stack application
  - [Project 2]() - Medium group, advanced full stack application with devops
  - [Project 3]() - Full group, full stack applicaiton dictated by CoE stakeholders
 
