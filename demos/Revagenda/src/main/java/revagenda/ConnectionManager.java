@@ -35,6 +35,16 @@ public class ConnectionManager {
         This is the string we need to use to connect to our database. We will build this string with each of the
         variables filled out and qualified.
          */
+
+        /*
+        Old File IO method to load properties
+            Properties props = new Properties();
+            FileReader fr = new FileReader("src/main/resources/application.properties");
+            props.load(fr);
+         */
+
+
+        //New method grabbing the properties from the JAR classpath
         Properties props = new Properties();
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         InputStream input = loader.getResourceAsStream("application.properties");
