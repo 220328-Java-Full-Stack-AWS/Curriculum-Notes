@@ -15,7 +15,16 @@ public class TestTableDAO implements CRUDInterface<TestTableModel>{
 
     @Override
     public void create(TestTableModel model) {
+        String sql = "INSERT INTO test_table (id, string) VALUES (?, ?)";
+        try {
+            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+            pstmt.setInt(1, model.getId());
+            pstmt.setString(2, model.getString());
+            pstmt.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -44,12 +53,20 @@ public class TestTableDAO implements CRUDInterface<TestTableModel>{
 
     @Override
     public void update(TestTableModel model) {
-
+        String sql = "UPDATE test_table SET string = ? WHERE id = ?";
+        try {
+            PreparedStatement pstmt = ConnectionManager.getConnection().prepareStatement(sql);
+            pstmt.setString(1, model.getString());
+            pstmt.setInt(2, model.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void delete(int id) {
-
+        String sql = "DELETE FROM test_table WHERE id = ?";
     }
 
     @Override
