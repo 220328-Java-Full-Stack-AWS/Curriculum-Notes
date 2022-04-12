@@ -1,6 +1,6 @@
 package revagenda.models;
 
-public class TestTableModel {
+public class TestTableModel extends Model{
     int id;
     String string;
 

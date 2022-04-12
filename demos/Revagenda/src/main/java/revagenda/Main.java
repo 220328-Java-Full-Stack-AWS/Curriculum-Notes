@@ -1,18 +1,29 @@
 package revagenda;
 
 
+import revagenda.models.Model;
+import revagenda.models.TestTableModel;
+import revagenda.persistence.TestTableDAO;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        try {
-            Connection conn = ConnectionManager.getConnection();
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        //Connection conn = ConnectionManager.getConnection();
+        TestTableDAO dao = new TestTableDAO();
+        TestTableModel model = dao.read(1);
+        System.out.println("Model: " + model.getId() + ", " + model.getString());
+
+        List<TestTableModel> list = dao.getAll();
+        for (TestTableModel temp : list) {
+            System.out.println("Model: " + temp.getId() + ", " + temp.getString());
         }
+
 
 
     }
