@@ -10,12 +10,26 @@ import java.util.Properties;
 public class ConnectionManager {
     //keep track of the connection
     private static Connection connection;
+    //private static ConnectionManager connectionManager;
 
     //keep track of this singleton
     //How to make a singleton:
     //Making the constructor private, so it can't be invoked
     private ConnectionManager() {
     }
+
+    /*
+    This actually serves no purpose as the way we have implemented this class all methods are static, and all
+    fields are also static, so there's nothing unique about an object of this class.
+     */
+//    public static ConnectionManager getConnectionManager() {
+//        if(connectionManager == null) {
+//            connectionManager = new ConnectionManager();
+//        }
+//
+//        return connectionManager;
+//    }
+
 
     public static Connection getConnection(){
         if(connection == null) {
