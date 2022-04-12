@@ -79,6 +79,10 @@ public class Main {
         myList.add("Terrell");
         myList.add("Mohammad");
 
+
+        int[] ar = new int[5];
+        int iiiiii = ar.length;
+
         /*
         The for-each loop uses the keyword for, just like a normal for loop. However, note how the syntax is different.
         There is a temp reference to a member of the collection, and the reference to the collection.
@@ -88,6 +92,19 @@ public class Main {
             System.out.println(temp);
         }
 
+        List<Integer> a = new LinkedList<>();
+        a.add(14);
+        a.add(266);
+        a.add(38765);
+        a.add(25);
+
+        for (int ii : a) {
+            System.out.println("Enhanced For Loop: " + ii);
+        }
+
+        for(int iii = 0; !a.get(iii).equals(25); iii++) {
+            System.out.println("Regular for loop: " + a.get(iii));
+        }
 
         /*
         Branching

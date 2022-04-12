@@ -23,6 +23,9 @@ public class Main {
         float fff = (float) 1;
 
 
+        OverloadTest.test(12, 2);
+
+
         Integer boxed;
         boxed = 7; //7 is an int, but we just put it in the Integer wrapper class with no fuss. No need for constructors or the new keyword
         int unboxed = boxed;
@@ -61,9 +64,20 @@ public class Main {
         If we wanted to move a string into the string pool, we call it's intern method.
          */
 
-
         String immutableString = "this string cannot be changed.";
         immutableString = immutableString + " let's add more to the string.";
+
+
+        StringBuilder stringBuilder = new StringBuilder("Beginning of string.");
+        stringBuilder.append(" New text appended to the end of the string.");
+        System.out.println(stringBuilder.toString());
+
+        StringBuffer stringBuffer = new StringBuffer("Beginning of buffer.");
+        stringBuffer.append(" Here we are adding new text to the end of the string.");
+        System.out.println(stringBuffer.toString());
+
+
+        //char[] array = new char[]{'h', 'e', 'l', 'l', 'o'}; //this is a character array, which is what is under the hood of strings.
 
 
 /*
