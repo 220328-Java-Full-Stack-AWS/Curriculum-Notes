@@ -1,7 +1,5 @@
 package revagenda;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -63,7 +61,7 @@ public class ConnectionManager {
 
         connection = DriverManager.getConnection(connectionString, username, password);
 
-        System.out.println("Connection String: " + connectionString);
+        //System.out.println("Connection String: " + connectionString);
 
         return connection;
 
