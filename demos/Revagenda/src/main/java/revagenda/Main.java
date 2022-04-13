@@ -1,13 +1,9 @@
 package revagenda;
 
 
-import revagenda.models.Model;
 import revagenda.models.TestTableModel;
 import revagenda.persistence.TestTableDAO;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
@@ -16,14 +12,22 @@ public class Main {
 
         //Connection conn = ConnectionManager.getConnection();
         TestTableDAO dao = new TestTableDAO();
-        TestTableModel model = dao.read(1);
-        System.out.println("Model: " + model.getId() + ", " + model.getString());
+        TestTableModel m = dao.read(1);
+        System.out.println("Model: " + m.getId() + ", " + m.getString());
 
         List<TestTableModel> list = dao.getAll();
         for (TestTableModel temp : list) {
             System.out.println("Model: " + temp.getId() + ", " + temp.getString());
         }
 
+        m.setString("I'm going home now.");
+
+        dao.update(m);
+
+        TestTableModel m2 = dao.read(1);
+        System.out.println("Updated model: " + m2.getId() + ", " + m2.getString());
+
+        ConnectionManager.close();
 
 
     }

@@ -2,9 +2,7 @@ package revagenda;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class ConnectionManager {
@@ -39,6 +37,15 @@ public class ConnectionManager {
         return connection;
     }
 
+    public static void close() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connection = null;
+    }
+
     //establish connection method
     private static Connection connect(){
         /*
@@ -68,16 +75,33 @@ public class ConnectionManager {
             String connectionString = "jdbc:postgresql://" +
                     props.getProperty("hostname") + ":" +
                     props.getProperty("port") + "/" +
-                    props.getProperty("dbname");
+                    props.getProperty("dbname") + "?schemaName=" +
+                    props.getProperty("schemaName");
 
             String username = props.getProperty("username");
             String password = props.getProperty("password");
 
             connection = DriverManager.getConnection(connectionString, username, password);
+
+            //Set search path to access different schemas:
+            String sql = "set search_path to \"$user\", public, test";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.executeUpdate();
+
+            //test it:
+//            String select = "select * from new_table";
+//            PreparedStatement selectStatement = connection.prepareStatement(select);
+//            ResultSet rs = selectStatement.executeQuery();
+//            while(rs.next()) {
+//                System.out.println(rs.getString("string"));
+//            }
+
+
+            System.out.println("Connection String: " + connectionString);
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-        //System.out.println("Connection String: " + connectionString);
+
 
         return connection;
 
