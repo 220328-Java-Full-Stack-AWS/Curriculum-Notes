@@ -1,4 +1,0 @@
-This is a text document to be tracked by Git.
-This file has been changed.
-This file will need to be committed again so those changes can be seen in the remote location.
-This is text entered and committed through the github web UI

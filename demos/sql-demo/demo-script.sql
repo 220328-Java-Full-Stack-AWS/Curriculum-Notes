@@ -8,7 +8,7 @@
 drop table test_table;
 
 create table test_table (
-	id INT,
+	id INT primary key,
 	string VARCHAR(200)
 );
 
@@ -25,7 +25,7 @@ insert into test_table (id) values (2);
 select * from test_table;
 select id from test_table;
 select id, string from test_table;
-select string from test_table where id = 1;
+select * from test_table where id = 1;
 select string from test_table where id = 0 or id = 1
 select * from test_table where id = 0 and string = 'hello';
 select * from test_table order by id;
@@ -43,5 +43,5 @@ delete from test_table where id = 99;
 
 
 
-
+SELECT * FROM test_table WHERE id = 0
 
