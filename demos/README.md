@@ -3,3 +3,4 @@
  - [Java Basics](./first-java-demo/)
  - [Flow Control](./flow-control/)
  - [SQL demo](./sql-demo/)
+ - [Optionals demo](./optionals-demo/)
