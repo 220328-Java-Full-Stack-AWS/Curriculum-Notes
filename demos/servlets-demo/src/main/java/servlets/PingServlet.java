@@ -11,6 +11,7 @@ public class PingServlet extends HttpServlet {
     public void init() throws ServletException {
     }
 
+
     /*
         This will take a simple GET request and respond with "Pong!" and status 202, indicating the request was accepted.
          */

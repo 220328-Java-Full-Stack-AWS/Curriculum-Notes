@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Scopes</title>
+</head>
+
+<body>
+    <h1>Open your browser console. (hint: f12)</h1>
+    <script id="preScript">
+        //Here we see this is in scope in the main script tag
+        var preScript = "This was defined inside another script tag, which appears above the main script tag in this file";
+    </script>
+
+    <script id="main">
+        /*
+        JS Scopes:
+        Global - available everywhere
+        Function - available within the function, out of scope once the function is complete
+        Block - let/const are block scoped keywords and this scope extends within a single block, 
+        like an if, for, or just a bare block of brackets{}
+        Lexical - Inside functions all variables that are in scope are also bound into the scope of that function.
+        This means that if the function is invoked elsewhere, anything that was in scope will still be bound 
+        within the funciton.
+        */
+
+        var un; //no definition so this is "undefined", more correctly could be considered "un-assigned"
+
+
+        console.log("Global var a: ", a); //we will get undefined for this. It's in scope thanks to hoisting but unassigned. The value doesn;t get hoisted
+        //console.log(x); //this is an error - "not defined" because x doesn't exist.
+
+
+        var a = "globally scoped variable";
+        let b = "globally scoped variable";
+        const c = "globally scoped variable";
+
+        console.log("block scoped var d: ", d); //this is hoisted out of the block, because var is not block scoped. Still "undefined" becase the assignment doesn't get hoisted
+        //console.log(e); //this is going to cause an error, because the let keyword is stuck in the block scope.
+
+        console.log("Science: ", preScript); //this works
+        //console.log("Science: ", postScript); //this fails
+
+
+        {
+            //this is a block
+            //console.log(e);
+            var d = "block scoped var";
+            let e = "block scoped let";
+            const f = "block scoped const";
+            console.log("Block scoped let e: ", e);
+        }
+
+        if (true) {
+            //this is a block
+            //let g = "also a block scoped let"
+        }
+
+        while (true) {
+            //this is a block
+            const h = "also a block scoped const";
+            //console.log("block scoped let g: ", g) //won't be in scope here
+            console.log("global scoped let b: ", b) //will be in scope here
+            break;
+        }
+
+
+        function scopeFunction() {
+            var i = "function scoped var";
+            let j = "function scoped let";
+            const k = "function scoped const";
+            console.log("global scoped const c: ", c); //global scope still in scope here
+            console.log("function scoped var i: ", i);
+        };
+
+        scopeFunction();//our variables in the function are still bound within the function, this lexical scoping
+
+        console.log("Function scoped var i: ", i); //should give us a not defined error
+
+
+
+    </script>
+    <script id="postScript">
+        //Here we see this is not in scope in the above script tag, and doesn't get hoisted into scope by hoisting
+        var postScript = "This was defined inside another script tag, which appears below the main script tag in this file";
+    </script>
+
+
+</body>
+
+</html>

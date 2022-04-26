@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays & Objects</title>
+</head>
+
+<body>
+    <h1>Open your browser console. (hint: f12)</h1>
+    <script>
+        /*
+        The JS array syntax is similar but different from Java syntax. We use the square brackets,
+        but don't put the parameter list in curly braces. We also don't need to explicitly type this as 
+        an array like in Java (because js is loosely typed).
+
+        We also access arrays in a similar manner, by putting the index in the square brackets
+        */
+        let arr = ["zero", "one", "two", "three"];
+        console.log("arr: ", arr);
+        for (let i = 0; i < arr.length; i++) {
+            console.log("arr[" + i + "]: ", arr[i]);
+        }
+
+        /*
+        Arrays in js are dynamic, you can add more elements to an array than the original size allows, and
+        the array will grow accordingly. This basically works the same way as ArrayList in Java.
+        */
+        arr[10] = "ten"; //will expand the array out to length 11, leaving undefined elements in the empty space
+        arr.push("eleven"); //will add an element to the end of the array
+
+        /*
+        splice takes in 2+ arguments, index of the starting position to add elements,
+        how many elements to "overwrite", and some number of elements to add in.
+        */
+        arr.splice(4, 6, "four", "five", "six", "seven", "eight", "nine");
+
+        //just like "pop" methods in the stacks and dequeues we are used to, pop removes an element and returns it.
+        //In JS arrays, push and pop add to and pull from the end of the array.
+        let pop = arr.pop();
+        console.log("popped element: ", pop);
+
+        //let's print the array now:
+        for (let i = 0; i < arr.length; i++) {
+            console.log("arr[" + i + "]: ", arr[i]);
+        }
+
+        /*
+        We can also iterate through arrays with the other two for loops, the for-of and the for-in loops.
+        One of these iterates through a list of keys, and the other iterates through elements
+        */
+
+        //For-in lets us iterate through a set of keys and we can then use those keys to reference the values in the array
+        //This also works on objects, which don't have indices, but do have key/value pairs. Arrays can be considered as 
+        //having "keys" that are integers 0 to length-1
+        for (let key in arr) {
+            console.log("Key [" + key + "] value: ", arr[key]);
+        }
+
+        //For-of only iterates through a collection, which means it doesn't work on objects, and we never
+        //see the keys. It simply iterates through all elements in an array.
+        for (let element of arr) {
+            console.log(element);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /*
+        Objects in javascript are not classes. They are similar, and as of ES6 (ECMAScript version 6, the definition 
+        of the js standard) there is class syntax in JS which produces objects. We are discussing basic js object notation here.
+        Objects are things stored in memory and referenced by variables, just like in Java. When we want to invoke some object
+        we de-freference it just like it Java with the dot operator.
+        */
+
+        let person = {
+            firstName: "Kyle",
+            lastName: "Plummer",
+            email: "kyle.plummer@revature.com"
+        }
+
+        console.log(person.lastName + ", " + person.firstName);
+
+        /*
+        We can modify these objects on the fly and add new properties.
+        */
+
+        person.phone = "555-555-5555";
+        person.role; //with no assignment this does nothing.
+        person.age = undefined;//However, we can just assign undefined to amount to the same thing.
+
+        console.log("person object: ", person);//remember to separate your arguments in logs to fact find
+        //console.log("person object: " + person);//Can't do good fact finding missions on concatinations
+
+
+
+
+    </script>
+</body>
+
+</html>

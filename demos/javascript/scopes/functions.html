@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+
+</head>
+
+<body>
+    <h1>Open your browser console. (hint: f12)</h1>
+    <script>
+        function myFunc() {
+            console.log("this is myFunc()");
+        }
+
+        function otherFunc(func) {
+            func();
+        }
+
+        otherFunc(myFunc);
+        /*
+        Functions are first-class variables, which means they can treated exactly like other variables.
+        This means we can pass functions as variables in parameter lists, and we can return functions from functions.
+        Why is this important? Because now we can have "callback functions".
+
+        A callback function is a function which is passed as a parameter to be invoked later during that function, 
+        usually at the end. Callback functions get used typically when we want to perform some action when another 
+        action is done. This is similar to how we hook into our own code when we invert control. In Java when we wrote
+        servlet classes, those classes and methods get invoked by tomcat, this is inversion of control. Callback
+        functions can be used similarly, when we hand off execution to some function, we may want to have it
+        perform some other function when it's complete.
+
+        An example of this is the "pub/sub" design pattern. The pub/sub design pattern is a way to transmit data
+        from one place to another. We have a "channel" which publishers write data to. And subscribers, who want 
+        to receive that data, subscribe to the channel with a callback function. When data is published, all 
+        registered callbacks are invoked, supplying the data to the subscriber. As a subscriber we just have to 
+        write our callback function to invoke our own functionality when the data is available.
+        */
+
+        let y = 0;
+        { //block scope here to enclose a "let" variable
+            let x = 0;
+            //here is our callback function
+            function callbackFunction(i) {
+                console.log("inside callbackFunction()");
+                x = i;
+                y = i;
+            }
+        }
+
+        //here is the calling function that will invoke our callback
+        function callingFunction(integer) {
+            console.log("inside callingFunction()");
+            callbackFunction(integer);
+        }
+
+        callingFunction(99);
+
+        console.log("y provided by callback: ", y);
+        //console.log(x); This was valid to update x, we didn't get an error doing so. 
+        //But, x is out of scope here and thus we cannot log it.
+
+
+        /*
+        There are several ways to define functions in Javascript. The most basic way is what we've seen
+        so far, function identifier() {function body};
+        There are also anonymous functions and arrow functions.
+        */
+
+        //This is an anonymous function. It's really the same as the normal funciton definition syntax. There
+        //is an identifier which can be used to invoke the function.
+        let anonymousFunction = function (str) {
+            console.log("anonymous function: ", str);
+        }
+        anonymousFunction("test.");
+
+
+
+        //This is an "arrow function" AKA lambda - an anonymous (and often ad-hoc) function
+        let arrowFunction = (param) => {
+            console.log("arrow function: ", param);
+        }
+        arrowFunction("test.");
+
+        /*
+        Arrow functions are anonymous and have no identifier. We can assign them and then use the reference
+        but this sort of defeats the purpose. However, this is very common. What is the actual purpose? To design
+        an anonymous ad-hoc function, that is to write it right in a parameter list (or similar).
+        */
+
+        function callingFunction2(integer, adHocFunction) {
+            adHocFunction(integer);
+        }
+
+        callingFunction2(1, (i) => { console.log("arrow function: ", i) });//writing the function right in the parameter list
+
+        /*
+        Javascript (and Java as well as many languages) are "pass-by-value" which means that when a parameter
+        is passed to a function it is copied, however references that are copied still point to 
+        the original object's location in memory. So below we see that we can change both
+        parameters to changeFunction(), and when complete the copies go out of scope, leaving z = 5, not 6.
+        But, obj was a reference to an object in memory, and the copied reference still points to it.
+        So, the changes to objCopy persist.
+        */
+        let z = 5;
+        let obj = {
+            thingy: "hello"
+        }
+
+        console.log("Pass-by-value test 0: ", z, obj);
+        function changeFunction(zCopy, objCopy) {
+            zCopy++;
+            objCopy.thingy = "Goodbye";
+            console.log("Pass-by-value test 1: ", zCopy, objCopy);
+        }
+
+        changeFunction(z, obj);
+
+        console.log("Pass-by-value test 2: ", z, obj);
+
+        /*
+        IIFE (imediately invoked dunction expression) AKA self invoking function. This type of function
+        expression defines an anonymous function that is invoked as soon as it is defined. We write these
+        by enclosing the function definition in parenthesis, and adding another set of parenthesis as a 
+        parameter list imediately after.
+        */
+
+        (function (input) {
+            console.log("This is a self-invoking function! ", input);
+        })("hello!");//here we have a parameter list
+
+    </script>
+</body>
+
+</html>
