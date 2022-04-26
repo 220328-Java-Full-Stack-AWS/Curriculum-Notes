@@ -11,6 +11,10 @@ Welcome to Revature! Over the course of this curriculum we will prepare you to b
  - [Code Demos](./demos/README.md)
  - [Self Study Topics](./self-study.md)
 
+## Simple Samples
+A series of (half finished) sample repositories with documentation
+ - [Simple-Samples](https://github.com/simple-samples)
+
 ## Project Specs:
  - [Project 1](https://github.com/220328-Java-Full-Stack-AWS/P1-Spec) - Solo, basic full stack application
  - [Project 2]() - Medium group, advanced full stack application with devops
