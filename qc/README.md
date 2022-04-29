@@ -5,14 +5,13 @@ These files are full of questions you are likely to be asked as part of QC. You 
  - [OOP](./oop.md)
  - [Java Basics](./java-basics.md)
  - [Java Intermediate - Advanced](./java-advanced.md)
+ - [JavaScript](./qc-javascript.md)
  - [SQL](./qc-sql.md)
+ - [Servlets](./qc-servlets.md)
  - [HTML](./qc-html.md)
  - [CSS](./qc-css.md)
- - [JavaScript](./qc-javascript.md)
  - [HTTP](./qc-http.md)
  - [REST](./qc-rest.md)
- - [Servlets](./qc-servlets.md)
- - [Junit](./qc-junit.md)
  - [AJAX](./qc-ajax.md)
 
 ### QC Questions
