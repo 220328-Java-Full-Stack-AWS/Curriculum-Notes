@@ -8,8 +8,12 @@ These files are full of questions you are likely to be asked as part of QC. You 
  - [SQL](./qc-sql.md)
  - [HTML](./qc-html.md)
  - [CSS](./qc-css.md)
-
-
+ - [JavaScript](./qc-javascript.md)
+ - [HTTP](./qc-http.md)
+ - [REST](./qc-rest.md)
+ - [Servlets](./qc-servlets.md)
+ - [Junit](./qc-junit.md)
+ - [AJAX](./qc-ajax.md)
 
 ### QC Questions
 You can focus your study here, but these are not exhaustive lists of all possible questions.
