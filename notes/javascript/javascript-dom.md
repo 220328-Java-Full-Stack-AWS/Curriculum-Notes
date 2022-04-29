@@ -467,31 +467,19 @@ When an event occurs, we use a JavaScript event handler (or an event listener) t
 
 Some of the commonly used JavaScript Events are listed below:
 
-* **onclick** -  This is a click event occurs when a user clicks the element on a web page. 
-
-* **ondblclick** -  This is a click event occurs when a user double clicks the element on a web page.
-
-* **onload** - This is a load event occurs when the browser has finished loading the page.
-
-* **onunload** - This is a load event occurs when a user closes the document.
-
-* **onresize** - This is a load event occurs when the browser window is minimized or maximized.
-
-* **onmouseover** -	This is a mouse event occurs when the user moves the mouse over an HTML element.
-
-* **onmouseout** - This is a mouse event occurs when the user moves the mouse away from an HTML element.
-
-* **onkeydown** - This is a keyboard event occurs when the user presses down a key on the keyboard. 
-
-* **onkeyup** - This is a keyboard event occurs when the user releases a key on the keyboard.
-
-* **onfocus** - This is a form-input event occurs when the user gives focus to an element on a web page.
-
-* **onblur** - This is a form-input event occurs when the user takes the focus away from a form element or a window.
-
-* **onchange** - This is a form-input event that occurs when a user changes the value of a form element.
-
-* **onsubmit** - This is a form-input event that occurs when the user submits a form on a web page.
+- **onclick** -  This is a click event occurs when a user clicks the element on a web page. 
+- **ondblclick** -  This is a click event occurs when a user double clicks the element on a web page.
+- **onload** - This is a load event occurs when the browser has finished loading the page.
+- **onunload** - This is a load event occurs when a user closes the document.
+- **onresize** - This is a load event occurs when the browser window is minimized or maximized.
+- **onmouseover** -	This is a mouse event occurs when the user moves the mouse over an HTML element.
+- **onmouseout** - This is a mouse event occurs when the user moves the mouse away from an HTML element.
+- **onkeydown** - This is a keyboard event occurs when the user presses down a key on the keyboard. 
+- **onkeyup** - This is a keyboard event occurs when the user releases a key on the keyboard.
+- **onfocus** - This is a form-input event occurs when the user gives focus to an element on a web page.
+- **onblur** - This is a form-input event occurs when the user takes the focus away from a form element or a window.
+- **onchange** - This is a form-input event that occurs when a user changes the value of a form element.
+- **onsubmit** - This is a form-input event that occurs when the user submits a form on a web page.
 
 **Example:** 
 ```html
