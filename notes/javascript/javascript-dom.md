@@ -347,7 +347,7 @@ The `insertBefore()` method is used to insert a node before another node as a ch
 
 ## Insert a Node After another
 
-JavaScript DOM provides the `insertBefore()` method that allows you to insert a new after an existing node as a child node. However, it hasn’t supported the insertAfter() method yet. So, we must manually do it. We start from the element we want to insert after, then we simply find it's next sibling and `insertBefore()` that. We can use `nextSibling()` for this.
+JavaScript DOM provides the `insertBefore()` method that allows you to insert a new before an existing node as it's sibling. However, it hasn’t supported the insertAfter() method yet. So, we must manually do it. We start from the element we want to insert after, then we simply find it's next sibling and `insertBefore()` that. We can use `nextSibling()` for this as seen in the example below:
 
 **Example:** Here, we inserts the new `<li>` element after the first child of `<ul>` element.
 ```html
