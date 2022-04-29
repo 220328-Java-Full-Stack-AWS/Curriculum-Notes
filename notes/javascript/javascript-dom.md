@@ -458,7 +458,10 @@ The `cloneNode()` method is used to clone an element. The cloneNode() method acc
 
 ## JavaScript Events
 
-Events occur when user interaction takes place on a web page, such as when the end-user clicked a link or button, pressed a key on the keyboard, moved the mouse pointer, submits a form, etc. The browser also triggers the events, such as the page load and unload events.
+Events occur when user interaction takes place on a web page, such as when the end-user clicked a link or button, pressed a key on the keyboard, moved the mouse pointer, submits a form, etc. The browser also triggers the events, such as the page load and unload events. Events occur in three phases:
+ - Capturing - The event object begins at the root node and traverses down the tree toward it's target element.
+ - Target - The event object has reached it's target element
+ - Bubbling - The event now begins traversing it's way back up the tree from target to root.
 
 When an event occurs, we use a JavaScript event handler (or an event listener) to detect them and perform a specific task.
 
