@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misc</title>
+
+</head>
+
+<body>
+    <h1>Open your browser console. (hint: f12)</h1>
+    <h3>In this document: </h3>
+    <ul>
+        <li>template literals</li>
+        <li>Exception handling</li>
+        <li>Fetch API and AJAX</li>
+        <li>Timing: intervals and timeouts</li>
+    </ul>
+    <script>
+        /*
+        We know about strings in javascript, they are a primitive data type and include the equivelant 
+        of the char data type, that is a string and a char in js are both strings. 
+
+        We can denote string literals with 'single quotes' and/or "double quotes", there is no difference.
+
+        There is a different special kind of string literal: template literals!
+        */
+
+
+        let templateLiteral = `string literals
+                                can be multi-line
+                                all these extra newlines and all the whitespace from indenting
+                                is included in the string.`;
+
+        console.log(templateLiteral);
+
+        //Template literals are special because they allow for string interpolation
+        let a = "hello";
+        let b = "world";
+        let concat = a + ", " + b + "!";//this is string concatination
+
+        let c = 5;
+        let d = 2;
+
+        let interpolatedString = `This string can hold stuff: ${a, b}. We can do al sorts of interesting expressions 
+        inside this string literal, like: addition ${c + d}, subtraction ${c - d} and so on.`;
+
+        console.log(interpolatedString);
+
+        /*
+        Tagged tempaltes. Another use for string literals is the tagged template syntax. This is where we invoke
+        a function but not with an ordinary parameter list, instead the invoke the function by following it's
+        identifier with a backticked template literal, not a parameter list in parenthesis.
+        */
+        function printAll(literalArray, a, b, aPlusB) {
+            console.log(literalArray);
+            console.log(a);
+            console.log(b);
+            console.log(aPlusB);
+        }
+        a = 3;
+        b = 4;
+        printAll`Addition:  ${a} + ${b} = ${a + b}`;
+
+        /*
+        We call the printAll method with a template literal instead of a parameter list. In reality this
+        basically destructures the template literal into several parts: The literal array which contains
+        all of the literal text in tokens delimeted by the variable expressions.
+
+        Then the variable expressions are the remaining parameters. The above code is basically the 
+        same as the following:
+        */
+
+        printAll(["Addition:  ", " + ", " = ", ""], a, b, a + b);
+
+
+
+        /*
+        Error handling - JS doesn't really have exceptions, everything is an error. We handle errors in
+        a similar way to Java: we try and catch them.
+        */
+        //let z = thingThatIsNotDefined;
+        try {
+            let x = thingThatIsNotDefined;
+        } catch (error) {
+            console.log("Error: ", error.name, error.message);//fact find the error object to see what's inside.
+        }
+
+        console.log("Do we get here?");
+
+
+        function customError(message) {
+            this.name = "customError";
+            this.message = message;
+            this.recoveryFunction = function () {
+                console.log("Maybe we build some sort of recovery or graceful shutdown logic here...");
+            }
+        }
+        customError.prototype = new Error;
+        try {
+            throw new customError("We've thrown our custom error!");
+        } catch (error) {
+            console.log("Custom error: ", error)
+            error.recoveryFunction();
+        }
+
+
+
+        /*
+        Consuming APIs - We call making API requests for resources in order to do things "consuming" the API. 
+        We make HTTP requests and send them to some URL, some API endpoint which most likely, in our case,
+        represents a resource. This is how we define client and server in a client/server architecture.
+        The client is the entity which places the request, the server is the entity which receives the request
+        and sends a response.
+
+        So, here in our front end code, we will make HTTP requests and send them to out APIs. We do this with Fetch.
+        We can also use the XmlHttpRequst which is commonly referred to as the AJAX workflow. No one uses the 
+        XmlHttpRequest object anymore. We will be using Fetch API instead. (Also you might check out Axios API)
+
+        With Fetch we prepare our request and send it, then we asynchronously wait on the response before
+        acting upon it.
+        */
+
+        let resourceURL = "http://localhost:8080/testAPI/test";
+
+        // async function fetchRequestCallGet() {
+        //     return await fetch(
+        //         resourceURL,
+        //         {
+        //             method: "GET",
+        //             headers: {
+        //                 "Content-Type": "application-json"
+        //             }
+        //         }
+        //     );
+        // }
+
+
+        // let postObject = {
+        //     name: "George Bakhoum",
+        //     title: "Full-stack developer",
+        //     salary: "$150,000"
+        // }
+
+        // async function fetchRequestCallPost(body) {
+        //     return await fetch(
+        //         resourceURL,
+        //         {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application-json",
+        //                 "testHeader": "test"
+        //             },
+        //             body: JSON.stringify(body)
+        //         }
+        //     );
+        // }
+
+        // let getResponse = fetchRequestCallGet();
+        // let postResponse = fetchRequestCallPost();
+
+        // console.log("GET response: ", getResponse);
+        // console.log("POST response: ", postResponse);
+
+        let handle = window.setInterval(() => { console.log("This will occur every 1000 milliseconds") }, 1000);
+
+        window.setTimeout(() => { window.clearInterval(handle) }, 5000);
+
+        let testObj = {
+            test: "test",
+            test2: 2
+        }
+
+
+        let obj2 = { ...testObj }
+
+        console.log("Spread test: ", obj2)
+
+
+    </script>
+
+</body>
+
+</html>

@@ -10,6 +10,7 @@
 
 <body>
     <h1>Open your browser console. (hint: f12)</h1>
+    <h3>In this document: JavaScript arrays and objects</h3>
     <script>
         /*
         The JS array syntax is similar but different from Java syntax. We use the square brackets,
@@ -32,7 +33,7 @@
         arr.push("eleven"); //will add an element to the end of the array
 
         /*
-        splice takes in 2+ arguments, index of the starting position to add elements,
+        splice takes in 2+ arguments: index of the starting position to add elements,
         how many elements to "overwrite", and some number of elements to add in.
         */
         arr.splice(4, 6, "four", "five", "six", "seven", "eight", "nine");
@@ -42,10 +43,7 @@
         let pop = arr.pop();
         console.log("popped element: ", pop);
 
-        //let's print the array now:
-        for (let i = 0; i < arr.length; i++) {
-            console.log("arr[" + i + "]: ", arr[i]);
-        }
+
 
         /*
         We can also iterate through arrays with the other two for loops, the for-of and the for-in loops.
@@ -55,17 +53,40 @@
         //For-in lets us iterate through a set of keys and we can then use those keys to reference the values in the array
         //This also works on objects, which don't have indices, but do have key/value pairs. Arrays can be considered as 
         //having "keys" that are integers 0 to length-1
+        console.log("For-in loop - Key/Value pairs:");
         for (let key in arr) {
             console.log("Key [" + key + "] value: ", arr[key]);
         }
 
         //For-of only iterates through a collection, which means it doesn't work on objects, and we never
         //see the keys. It simply iterates through all elements in an array.
+        console.log("For-of loop - Elements: ");
         for (let element of arr) {
             console.log(element);
         }
 
+        //There are a number of helpful array methods too, like sort():
+        arr.sort();
+        //Also check out the others, like map(), indexOf(), find(), filter(), and reduce() just to name a few
 
+
+
+        //And of course we can iterate through the array with a plain old for loop.
+        console.log("Sorted array: ");
+        for (let i = 0; i < arr.length; i++) {
+            console.log("arr[" + i + "]: ", arr[i]);
+        }
+
+        /*
+        array destruction: Destruction (Kyle likes to call it "destructuring") is the process of breaking apart
+        some object or array in order to assign it's constituent parts to variables.
+        */
+        let [thing1, thing2, thing3, thing4, thing5] = arr;
+        console.log(thing1);
+        console.log(thing2);
+        console.log(thing3);
+        console.log(thing4);
+        console.log(thing5);
 
 
 
@@ -95,11 +116,63 @@
         */
 
         person.phone = "555-555-5555";
+        person.username = "kplummer";
+        person.password = "password123";
         person.role; //with no assignment this does nothing.
         person.age = undefined;//However, we can just assign undefined to amount to the same thing.
+        person.printName = () => { console.log("person object: ", person); }
 
-        console.log("person object: ", person);//remember to separate your arguments in logs to fact find
-        //console.log("person object: " + person);//Can't do good fact finding missions on concatinations
+        person.printName();
+
+        //object destruction
+        let { username, password } = person;
+
+        console.log("username: ", username);
+        console.log("password: ", password);
+
+        //We can nest objects inside other objects
+        let nestingObj = {
+            name: "nestingObj",
+            description: "This object holds another object within.",
+            nestedObject: {
+                name2: "nestedObject",
+                description2: "This object is nested within another.",
+                thing: "This is a thing!"
+            }
+        }
+
+        /*
+        Technically "array destruction" or "object destruction" is what this is called, but I find the 
+        word "destroy" to be a little confusing, I like "destructure" as it implies we remove the 
+        structure and left with it's parts. Below we will "destroy" or "destructure" the nested objects above:
+        */
+        let { name, description, nestedObject: { name2, description2, thing } } = nestingObj;
+
+        console.log("name: ", name);
+        console.log("description: ", description);
+        console.log("name2: ", name2);
+        console.log("description2: ", description2);
+        console.log("thing: ", thing);
+
+        /*
+        Default values: When doing object destruciton you can actually define default values.
+        If the corresponding key is not found within the destructured object, the default is used.
+        Basically we assign the defaul value, and then re-assign some other value if it exists
+        with destruction.
+        */
+
+        let { firstName, lastName, city = "Arlington" } = person;
+        //here city is not a property of person, so the default value is kept.
+        console.log("first,last,city: ", firstName, lastName, city);
+
+        /*
+        we can actually use destruction in combination with the Object.entries() method
+        in order to produce something that is iterable and can be used with a for-of
+        */
+        for (let [key, value] of Object.entries(person)) {
+            console.log("tuple: ", key, value);
+        }
+
 
 
 
