@@ -79,7 +79,7 @@ public class Main {
         Optional<String> mightExist = newList.stream().findAny();
 
         if(mightExist.isPresent()) {
-            System.out.println("Random name: " + mightExist.get());
+            System.out.println("\"Random\" name: " + mightExist.get());
         } else {
             System.out.println("List Empty");
         }
