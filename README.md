@@ -17,6 +17,7 @@ A series of (half finished) sample repositories with documentation
 
 ## Project Specs:
  - [Project 1](https://github.com/220328-Java-Full-Stack-AWS/P1-Spec) - Solo, basic full stack application
- - [Project 2]() - Medium group, advanced full stack application with devops
+ - [Project 2](https://github.com/220328-Java-Full-Stack-AWS/P2-Spec) - Medium group, advanced full stack application with devops
+   - [A Note About P2](https://github.com/220328-Java-Full-Stack-AWS/Curriculum-Notes/blob/main/P2.md) 
  - [Project 3]() - Full group, full stack applicaiton dictated by CoE stakeholders
 
