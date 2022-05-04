@@ -122,7 +122,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
+    private Integer id;
     
     @Column(name = "first_name")
     private String firstName;
@@ -141,10 +141,10 @@ public class Student {
         this.lastName = lastName;
         this.email = email;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getFirstName() {
