@@ -71,11 +71,11 @@ A *hibernate.properties* file equivalent to the above *hibernate.cfg.xml* file i
 ```properties
 hibernate.dialect=org.hibernate.dialect.MySQLDialect
 hibernate.connection.driver_class=com.mysql.jdbc.Driver
-hibernate.connection.url=jdbc:mysql://localhost:3306/test_db?useSSL=false
+hibernate.connection.url=jdbc:mysql://localhost:3306/db_name
 hibernate.connection.username=root
 hibernate.connection.password=root
-show_sql=true
-hbm2ddl.auto=create
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=create
 ```
 
 The difference between a *hibernate.cfg.xml* and *hibernate.properties* file is that in an XML file we can directly map classes using the `<mapping>` element, but there is no way to configure this in a properties file. So, we map the classes using programmatic configuration.
