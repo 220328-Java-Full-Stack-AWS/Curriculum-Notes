@@ -5,3 +5,5 @@
  - [SQL demo](./sql-demo/)
  - [Optionals demo](./optionals-demo/)
  - [Javascript demos](./javascript/)
+ - [Functional Programming in Java](./functional-interfaces-streams/)
+ - [Threads](./threads/)

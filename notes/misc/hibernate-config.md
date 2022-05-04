@@ -71,11 +71,11 @@ A *hibernate.properties* file equivalent to the above *hibernate.cfg.xml* file i
 ```properties
 hibernate.dialect=org.hibernate.dialect.MySQLDialect
 hibernate.connection.driver_class=com.mysql.jdbc.Driver
-hibernate.connection.url=jdbc:mysql://localhost:3306/test_db?useSSL=false
+hibernate.connection.url=jdbc:mysql://localhost:3306/db_name
 hibernate.connection.username=root
 hibernate.connection.password=root
-show_sql=true
-hbm2ddl.auto=create
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=create
 ```
 
 The difference between a *hibernate.cfg.xml* and *hibernate.properties* file is that in an XML file we can directly map classes using the `<mapping>` element, but there is no way to configure this in a properties file. So, we map the classes using programmatic configuration.
@@ -122,7 +122,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
+    private Integer id;
     
     @Column(name = "first_name")
     private String firstName;
@@ -141,10 +141,10 @@ public class Student {
         this.lastName = lastName;
         this.email = email;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getFirstName() {
