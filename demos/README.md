@@ -8,3 +8,4 @@
  - [Functional Programming in Java](./functional-interfaces-streams/)
  - [Threads](./threads/)
  - [Junit 5 Jupiter](./junit-jupiter)
+   - [Junit 4](./junit-4-demo)
