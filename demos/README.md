@@ -7,3 +7,4 @@
  - [Javascript demos](./javascript/)
  - [Functional Programming in Java](./functional-interfaces-streams/)
  - [Threads](./threads/)
+ - [Junit 5 Jupiter](./junit-jupiter)
