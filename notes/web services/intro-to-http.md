@@ -22,6 +22,46 @@ Each HTTP response is composed of:
  - Response Body - message content (resource representation in REST)
 
 <div align="center"> <img src="./../images/http-response-image.png"> </div>
+
+
+## Tranmitting Data
+There are a number of ways to transmit data as part of these requests and responses:
+Path variables and a query parameter
+```
+www.bank.com/api/user/{3}/account/{5}/transaction/{2022-05-08}?type=deposit
+```
+
+lots of query parameters
+```
+www.bank.com/api/transactions?user=3&account=5&transaction=2022-05-08&type=deposit
+```
+
+headers
+```
+www.bank.com/api/transactions
+	headers: 
+	user=3
+	account=5
+	transaction=2022...
+	type=deposit
+```
+JSON body
+```
+www.bank.com/api/transactions
+	body:
+	{ 
+		"user" : 3
+		"account" : 5
+		"transaction" : "2022-05-08"
+		"type" : "deposit"
+	}
+```
+
+What we want to do is probably a mix of all 4:
+ - Path parameters for resource pathing through a restful hierarchy of resources
+ - query params for anything else that has to do with the content of the request
+ - headers for anything that has to do with the request itself, not the contents (request metadata)
+ - JSON body for anything that is a resource representation
   
   
 ## HTTP Verbs
