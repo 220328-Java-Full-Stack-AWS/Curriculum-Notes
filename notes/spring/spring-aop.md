@@ -7,7 +7,7 @@ Aspect Oriented Programming is another way to think about structuring your progr
 * _Aspect_ - A representation of a concern which cuts across multiple classes.
 * _Weaving_ - The process of linking aspects with other objects, such as beans, to create advised objects. This can be done at compile time (such as when using the AspectJ compiler), load time or runtime. Spring performs weaving at Runtime.
 * _Join Point_ - A specified moment during the execution of a program, such as the invocation of a method, in which actions can be taken.
-* _Advice _ - Action taken by an aspect at a specified Join point. 
+* _Advice_ - Action taken by an aspect at a specified Join point. 
 * _Pointcut_ - A definition of which methods in our application advice ought to be injected into or around, for example, when a method of a certain name is executed. By default, spring uses AspectJ pointcut expression language.
 * _Introduction_ - Declaration of new interfaces and corresponding implementations in subclasses of any advised object. Introductions use the `@DeclareParents` annotation with the _defaultImpl_ attribute to define a default concrete class for the bean definition. For Example:
 
