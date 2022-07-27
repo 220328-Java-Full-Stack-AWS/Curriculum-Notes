@@ -8,6 +8,7 @@ class HibernateDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

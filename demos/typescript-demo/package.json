@@ -1,0 +1,11 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "description": "This is a demo of node, NPM, and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}

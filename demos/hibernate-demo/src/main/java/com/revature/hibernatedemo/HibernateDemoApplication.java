@@ -27,10 +27,25 @@ public class HibernateDemoApplication {
 		SessionFactory sessionFactory = config.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 
-		User kyle = new User("kplummer", "password", "Kyle", "Plummer");
-		session.save(kyle);
+		//User kyle = new User("kplummer", "password", "Kyle", "Plummer");
 
-		System.out.println(kyle.getId());
+		User test = session.get(User.class, 2);
+		session.persist(test);
+
+		System.out.println(test);
+
+		Transaction tx = session.beginTransaction();
+		test.setFirstName("newFirstName");
+		test.setLastName("newLastName");
+		session.update(test);
+		tx.commit();
+
+
+		Transaction tx2 = session.beginTransaction();
+		session.delete(test);
+		tx2.commit();
+
+
 
 //		kyle.setLastName("Johansen");
 //		session.update(kyle);
