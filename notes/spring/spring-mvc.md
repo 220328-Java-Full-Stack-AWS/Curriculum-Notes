@@ -57,6 +57,19 @@ For example:
 
 
 ### Spring Web Annotations
+Quick overview of the annotations we work with in spring web:
+ - @Controller - Applies to class - Marks the class as a controller type bean for component scanning
+ - @RequestBody - applies to a parameter - marks the parameter as the object that should be mapped from the JSON string in the request body
+ - @ResponseBody - applies to a method's return type, or to a class where it auto applies to all method return types - the returned object should get serialized into JSON and transmitted in the response body.
+ - @RestController - applies to class, and implies @Controller and @ResponseBody
+ - @PathVariable - applies to a parameter and tells spring to pull the value from the corresponding token position in the URL and assign to that parameter
+ - @RequestParam - applies to a paremeter - tells spring to pull the value for this parameter from the corresponding key/value pair in the query paramter list
+ - @RequestMapping - pplies to class or method - maps a URI to a controller or controller method based on URI
+ - @GetMapping - same as RequestMapping but implies a get request
+ - @PostMapping - same as RequestMapping but implies a postrequest
+ - @PutMapping - same as RequestMapping but implies a put request
+ - @DeleteMapping - same as RequestMapping but implies a delete request
+
 As discussed in the [stereotype annotation lecture notes](../a-framework/stereotypes.md), the `@Controller` annotation specifies a class as a _controller_, a special type of bean used particularly to handle web application requests. The introduction of the `@Controller` annotation, as of Spring 3.0, allows for the creation of RESTful Web services and applications through the use of the `@PathVariable` annotation as well as other flexible features. The dispatcher will scan these `@Controller`-annotated and `@RequestMapping`-annotated classes and detect any `@RequestMapping`-annotated methods. Depending on the context, this `@RequestMapping` annotation can be configured with url mapping, http request method types, url values, and other parameters. 
 
 For example (Example from Spring Documentation):

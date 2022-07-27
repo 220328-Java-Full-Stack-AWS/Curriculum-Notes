@@ -21,7 +21,7 @@ It is worth noting that the BeanFactory instantiates beans lazily (creating bean
 
 ## XML Configuration
 XML configuration consists of the declaration of at least one <bean/> element nested inside a top-level <beans/> element. These bean definitions correspond to actual objects within your application, and typically relate to server layer, data access (DAO), infrastructure objects (such as hibernate SessionFactories), or presentation objects (such as Struts Action instances). The following code is an example of a basic bean configuration using XML:
-```
+```xml
 <!-- This XML file defines service beans and is named 'services.xml' -->
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -50,7 +50,7 @@ XML configuration consists of the declaration of at least one <bean/> element ne
 </beans>
 ```
 
-```
+```xml
 <!-- This XML file defines DAO beans and is named 'daos.xml' -->
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -93,7 +93,7 @@ ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"s
 Annotation configuration, introduced as of Spring 2.5, serves as an alternative to XML-based setups, and rely on the use of annotations and bytecode metadata to wire components as opposed to the used of angle-bracket element declarations. Utilization of annotation based configuration still requires the use of an ApplicationContext XML file; however, the bean configurations are separated from this XML file into the component class files themselves and are defined using relevant annotations on the class, method or field declaration. 
 
 To use annotation configuration the context tag will be required within the ApplicationContext configuration file. This element enables the use of annotations which is, by default, turned off. Additionally, you will need to include the xml namespace "context". For Example:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -123,7 +123,7 @@ To use annotation configuration the context tag will be required within the Appl
 To properly configure beans, use of the `@Autowired` annotation should be used. This annotation injects beans based on their type, and it commonly used with singleton bean design patterns.
 
 `@Autowired` [Property]
-```
+```java
 package com.revature.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
